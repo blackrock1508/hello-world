@@ -1,0 +1,837 @@
+
+black@BLACKROCK MINGW64 ~
+$ -version
+bash: -version: command not found
+
+black@BLACKROCK MINGW64 ~
+$ git -version
+unknown option: -version
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+black@BLACKROCK MINGW64 ~
+$ git --version
+git version 2.39.0.windows.1
+
+black@BLACKROCK MINGW64 ~
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+black@BLACKROCK MINGW64 ~
+$ git config --global --global user.name "admin"
+
+black@BLACKROCK MINGW64 ~
+$ git config --global --global user.email "mks.nit@gmail.com"
+
+black@BLACKROCK MINGW64 ~
+$ mkdir myproj
+
+black@BLACKROCK MINGW64 ~
+$ cd myproj
+
+black@BLACKROCK MINGW64 ~/myproj
+$ git init
+Initialized empty Git repository in C:/Users/black/myproj/.git/
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ ls
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ ls
+index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git add index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Readme.md
+        bluestyle.css
+        bycss.css
+
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git add -A
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Readme.md
+        new file:   bluestyle.css
+        new file:   bycss.css
+        new file:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Readme.md
+        new file:   bluestyle.css
+        new file:   bycss.css
+        new file:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git commit -m "First release of Hello world!"
+[main (root-commit) 5318cb7] First release of Hello world!
+ 4 files changed, 35 insertions(+)
+ create mode 100644 Readme.md
+ create mode 100644 bluestyle.css
+ create mode 100644 bycss.css
+ create mode 100644 index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git commit -m "First release of Hello world!"
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git commit -m "First release of Hello world!"
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git commit -m "First release of Hello world!"
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git add -A
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git commit -m "First release of Hello world!"
+[main 10dc315] First release of Hello world!
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git commit -m "Updated first release of Hello world!"
+On branch main
+nothing to commit, working tree clean
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git commit -m "First release of Hello world!"
+On branch main
+nothing to commit, working tree clean
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ ls
+Readme.md  bluestyle.css  bycss.css  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git help all
+fatal: 'C:/Program Files/Git/mingw64/share/doc/git-doc/gitall.html': documentation file not found.
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git help --all
+See 'git help <command>' to read about a specific subcommand
+
+Main Porcelain Commands
+   add                     Add file contents to the index
+   am                      Apply a series of patches from a mailbox
+   archive                 Create an archive of files from a named tree
+   bisect                  Use binary search to find the commit that introduced a bug
+   branch                  List, create, or delete branches
+   bundle                  Move objects and refs by archive
+   checkout                Switch branches or restore working tree files
+   cherry-pick             Apply the changes introduced by some existing commits
+   citool                  Graphical alternative to git-commit
+   clean                   Remove untracked files from the working tree
+   clone                   Clone a repository into a new directory
+   commit                  Record changes to the repository
+   describe                Give an object a human readable name based on an available ref
+   diff                    Show changes between commits, commit and working tree, etc
+   fetch                   Download objects and refs from another repository
+   format-patch            Prepare patches for e-mail submission
+   gc                      Cleanup unnecessary files and optimize the local repository
+   gitk                    The Git repository browser
+   grep                    Print lines matching a pattern
+   gui                     A portable graphical interface to Git
+   init                    Create an empty Git repository or reinitialize an existing one
+   log                     Show commit logs
+   maintenance             Run tasks to optimize Git repository data
+   merge                   Join two or more development histories together
+   mv                      Move or rename a file, a directory, or a symlink
+   notes                   Add or inspect object notes
+   pull                    Fetch from and integrate with another repository or a local branch
+   push                    Update remote refs along with associated objects
+   range-diff              Compare two commit ranges (e.g. two versions of a branch)
+   rebase                  Reapply commits on top of another base tip
+   reset                   Reset current HEAD to the specified state
+   restore                 Restore working tree files
+   revert                  Revert some existing commits
+   rm                      Remove files from the working tree and from the index
+   scalar                  A tool for managing large Git repositories
+   shortlog                Summarize 'git log' output
+   show                    Show various types of objects
+   sparse-checkout         Reduce your working tree to a subset of tracked files
+   stash                   Stash the changes in a dirty working directory away
+   status                  Show the working tree status
+   submodule               Initialize, update or inspect submodules
+   switch                  Switch branches
+   tag                     Create, list, delete or verify a tag object signed with GPG
+   worktree                Manage multiple working trees
+
+Ancillary Commands / Manipulators
+   config                  Get and set repository or global options
+   fast-export             Git data exporter
+   fast-import             Backend for fast Git data importers
+   filter-branch           Rewrite branches
+   mergetool               Run merge conflict resolution tools to resolve merge conflicts
+   pack-refs               Pack heads and tags for efficient repository access
+   prune                   Prune all unreachable objects from the object database
+   reflog                  Manage reflog information
+   remote                  Manage set of tracked repositories
+   repack                  Pack unpacked objects in a repository
+   replace                 Create, list, delete refs to replace objects
+
+Ancillary Commands / Interrogators
+   annotate                Annotate file lines with commit information
+   blame                   Show what revision and author last modified each line of a file
+   bugreport               Collect information for user to file a bug report
+   count-objects           Count unpacked number of objects and their disk consumption
+   diagnose                Generate a zip archive of diagnostic information
+   difftool                Show changes using common diff tools
+   fsck                    Verifies the connectivity and validity of the objects in the database
+   gitweb                  Git web interface (web frontend to Git repositories)
+   help                    Display help information about Git
+   instaweb                Instantly browse your working repository in gitweb
+   merge-tree              Perform merge without touching index or working tree
+   rerere                  Reuse recorded resolution of conflicted merges
+   show-branch             Show branches and their commits
+   verify-commit           Check the GPG signature of commits
+   verify-tag              Check the GPG signature of tags
+   version                 Display version information about Git
+   whatchanged             Show logs with difference each commit introduces
+
+Interacting with Others
+   archimport              Import a GNU Arch repository into Git
+   cvsexportcommit         Export a single commit to a CVS checkout
+   cvsimport               Salvage your data out of another SCM people love to hate
+   cvsserver               A CVS server emulator for Git
+   imap-send               Send a collection of patches from stdin to an IMAP folder
+   p4                      Import from and submit to Perforce repositories
+   quiltimport             Applies a quilt patchset onto the current branch
+   request-pull            Generates a summary of pending changes
+   send-email              Send a collection of patches as emails
+   svn                     Bidirectional operation between a Subversion repository and Git
+
+Low-level Commands / Manipulators
+   apply                   Apply a patch to files and/or to the index
+   checkout-index          Copy files from the index to the working tree
+   commit-graph            Write and verify Git commit-graph files
+   commit-tree             Create a new commit object
+   hash-object             Compute object ID and optionally creates a blob from a file
+   index-pack              Build pack index file for an existing packed archive
+   merge-file              Run a three-way file merge
+   merge-index             Run a merge for files needing merging
+   mktag                   Creates a tag object with extra validation
+   mktree                  Build a tree-object from ls-tree formatted text
+   multi-pack-index        Write and verify multi-pack-indexes
+   pack-objects            Create a packed archive of objects
+   prune-packed            Remove extra objects that are already in pack files
+   read-tree               Reads tree information into the index
+   symbolic-ref            Read, modify and delete symbolic refs
+   unpack-objects          Unpack objects from a packed archive
+   update-index            Register file contents in the working tree to the index
+   update-ref              Update the object name stored in a ref safely
+   write-tree              Create a tree object from the current index
+
+Low-level Commands / Interrogators
+   cat-file                Provide content or type and size information for repository objects
+   cherry                  Find commits yet to be applied to upstream
+   diff-files              Compares files in the working tree and the index
+   diff-index              Compare a tree to the working tree or index
+   diff-tree               Compares the content and mode of blobs found via two tree objects
+   for-each-ref            Output information on each ref
+   for-each-repo           Run a Git command on a list of repositories
+   get-tar-commit-id       Extract commit ID from an archive created using git-archive
+   ls-files                Show information about files in the index and the working tree
+   ls-remote               List references in a remote repository
+   ls-tree                 List the contents of a tree object
+   merge-base              Find as good common ancestors as possible for a merge
+   name-rev                Find symbolic names for given revs
+   pack-redundant          Find redundant pack files
+   rev-list                Lists commit objects in reverse chronological order
+   rev-parse               Pick out and massage parameters
+   show-index              Show packed archive index
+   show-ref                List references in a local repository
+   unpack-file             Creates a temporary file with a blob's contents
+   var                     Show a Git logical variable
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git branch
+* main
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git branch -m
+fatal: branch name required
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git --branch
+unknown option: --branch
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git commit --branch
+On branch main
+nothing to commit, working tree clean
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git commit -a
+On branch main
+nothing to commit, working tree clean
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git staus -help
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status -help
+usage: git status [<options>] [--] [<pathspec>...]
+
+    -v, --verbose         be verbose
+    -s, --short           show status concisely
+    -b, --branch          show branch information
+    --show-stash          show stash information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain[=<version>]
+                          machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --ignored[=<mode>]    show ignored files, optional modes: traditional, matching, no. (Default: traditional)
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --column[=<style>]    list untracked files in columns
+    --no-renames          do not detect renames
+    -M, --find-renames[=<n>]
+                          detect renames, optionally set similarity index
+
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status -v
+On branch main
+nothing to commit, working tree clean
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git add index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ ls
+Readme.md  bluestyle.css  bycss.css  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git branch "Hello world images"
+fatal: 'Hello world images' is not a valid branch name
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git branch "Hello-world-images"
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git branch
+  Hello-world-images
+* main
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git checkout "Hello-world-images"
+Switched to branch 'Hello-world-images'
+M       index.html
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ git status
+On branch Hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ git add --all
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ git status
+On branch Hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ git status
+On branch Hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ git status
+On branch Hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        img_hello_world.JPG
+
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ git add --all
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ git status
+On branch Hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   img_hello_world.JPG
+        modified:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ git commit -m "Add image to hello world"
+[Hello-world-images 98c861c] Add image to hello world
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+ create mode 100644 img_hello_world.JPG
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ ls
+Readme.md  bluestyle.css  bycss.css  img_hello_world.JPG  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ git checkout "main"
+Switched to branch 'main'
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ ls
+Readme.md  bluestyle.css  bycss.css  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git checkout "Hello-world-images"
+Switched to branch 'Hello-world-images'
+
+black@BLACKROCK MINGW64 ~/myproj (Hello-world-images)
+$ git checkout "main"
+Switched to branch 'main'
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git checkout -b emergency-fix
+Switched to a new branch 'emergency-fix'
+
+black@BLACKROCK MINGW64 ~/myproj (emergency-fix)
+$ ls
+Readme.md  bluestyle.css  bycss.css  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (emergency-fix)
+$ ls
+Readme.md  bluestyle.css  bycss.css  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (emergency-fix)
+$ git status
+On branch emergency-fix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+black@BLACKROCK MINGW64 ~/myproj (emergency-fix)
+$ git add index.html
+
+black@BLACKROCK MINGW64 ~/myproj (emergency-fix)
+$ git commit -m "updated index.html with emergency fix"
+[emergency-fix c117dee] updated index.html with emergency fix
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+black@BLACKROCK MINGW64 ~/myproj (emergency-fix)
+$ git checkout main
+Switched to branch 'main'
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ ls
+Readme.md  bluestyle.css  bycss.css  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git merge emergency-fix
+Updating 10dc315..c117dee
+Fast-forward
+ index.html | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git branch -d emergency-fix
+Deleted branch emergency-fix (was c117dee).
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+black@BLACKROCK MINGW64 ~/myproj (hello-world-images)
+$ ls
+Readme.md  bluestyle.css  bycss.css  img_hello_world.JPG  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        img_hello_git.JPG
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+black@BLACKROCK MINGW64 ~/myproj (hello-world-images)
+$ git add --all
+
+black@BLACKROCK MINGW64 ~/myproj (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   img_hello_git.JPG
+        modified:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (hello-world-images)
+$ git commit -m "added new image"
+[hello-world-images 4b152f5] added new image
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+ create mode 100644 img_hello_git.JPG
+
+black@BLACKROCK MINGW64 ~/myproj (hello-world-images)
+$ git checkout main
+Switched to branch 'main'
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ ls
+Readme.md  bluestyle.css  bycss.css  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git merge hello-world-images
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+black@BLACKROCK MINGW64 ~/myproj (main|MERGING)
+$ git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   img_hello_git.JPG
+        new file:   img_hello_world.JPG
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (main|MERGING)
+$ git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   img_hello_git.JPG
+        new file:   img_hello_world.JPG
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+
+black@BLACKROCK MINGW64 ~/myproj (main|MERGING)
+$ git merge hello-world-images
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+black@BLACKROCK MINGW64 ~/myproj (main|MERGING)
+$ git commit -m "Megred to main"
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main|MERGING)
+$ git add index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main|MERGING)
+$ git commit -m "Megred to main"
+[main c28c415] Megred to main
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ ls
+Readme.md  bluestyle.css  bycss.css  img_hello_git.JPG  img_hello_world.JPG  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+black@BLACKROCK MINGW64 ~/myproj (hello-world-images)
+$ git branch -d hello-world-image
+error: branch 'hello-world-image' not found.
+
+black@BLACKROCK MINGW64 ~/myproj (hello-world-images)
+$ git branch -d hello-world-images
+error: Cannot delete branch 'hello-world-images' checked out at 'C:/Users/black/myproj'
+
+black@BLACKROCK MINGW64 ~/myproj (hello-world-images)
+$ git checkout main
+Switched to branch 'main'
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git branch -d hello-world-images
+Deleted branch hello-world-images (was 4b152f5).
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ git branch -d hello-world-images
+error: branch 'hello-world-images' not found.
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ ls
+Readme.md  bluestyle.css  bycss.css  img_hello_git.JPG  img_hello_world.JPG  index.html
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$ ^C
+
+black@BLACKROCK MINGW64 ~/myproj (main)
+$
